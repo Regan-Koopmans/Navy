@@ -1,8 +1,0 @@
-# Relating to LaTeX
-
-*.pdf
-*.log
-*.aux
-*.bbl
-*.gx
-*.blg
