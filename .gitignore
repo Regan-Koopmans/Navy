@@ -4,6 +4,5 @@
 *.log
 *.aux
 *.bbl
-*.gx
-*.blg
 *.gz
+*.blg
