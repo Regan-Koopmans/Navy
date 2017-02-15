@@ -1,0 +1,25 @@
+General (for lecturers, students and visitors)
+-Find restaurants
+-Find restrooms
+---Find nearest restroom
+-Find exists/entrance
+---Find nearest exist/entrance
+-Find building
+-Get directions
+---Find shortest route
+---Find fastest route
+---Select Mode (Motorcycle,Walk, Wheelchair)
+-Help
+-Login
+---Select user type (lecturer, student, visitor). N.B: User may be both a lecturer and student.
+
+
+Students
+-Load lecture/exam/sem test timetable
+-Get next lecture/exam/sem test details
+---Get directions (to next lecture/exam/sem test)
+
+Lecturers
+-Load lecturer's timetable (consultations, lectures, invigilations)
+-Get next consultation/lecture/invigilation
+---Get directions (next consultation/lecture/invigilation)
