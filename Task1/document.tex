@@ -3,92 +3,138 @@
 
 \author{Navy Team}
 
+
 \title{NavUP : Software Requiremnts Specification}
 \begin{document}
-	
 	\maketitle
-	
+
 	\section{Introduction}
-	
+
 		\subsection{Purpose}
-		
-		The goal of this Software Requirements Specification is to ascertain the concrete necessities that the proposed software, NavUP, should fulfil. This software, amongst other tasks, will act primarily as a navigation tool. For this reason we believe the two main interest groups are:
-		
+
+		The goal of this Software Requirements Specification is to ascertain the
+		concrete necessities that the proposed software, NavUP, should fulfil. This
+		software, amongst other tasks, will act primarily as a navigation tool. For
+		this reason we believe the two main interest groups are:
+
 		\begin{itemize}
-			\item Students who are search for a particular building on campus, or are investigating the many historically relevant buildings on campus.
+			\item Students who are search for a particular building on campus, or are
+						investigating the many historically relevant buildings on campus.
+
 			\item Guests to the university that require assistance finding locations.
 		\end{itemize}
-		
-		
+
+
 		\subsection{Scope}
-		
-		
-		
+
+
+
 		\subsection{Definitions, Acronyms and Abbreviations}
-		
+
 		\subsection{References}
-		
+
 		\subsection{Overview}
-	
+
 	\section{Overall Description}
-	
+
+		The NavUP Navigation system
+
 		\subsection{Product Perspective}
-		
+
 			\subsubsection{System Interfaces}
-			
+
 			\subsubsection{User Interfaces}
-		
-				There will be three main mediums through which prospective users can interact with the proposed system. These are:
-				
+
+				There will be three main mediums through which prospective users can
+				interact with the proposed system. These are:
+
 				\paragraph{Web Interface}
-				
-					Users will be able to access the software through an intuitive Web Interface, and hence through any device that has an up-to-date browser.			
-				
+
+					Users will be able to access the software through an intuitive Web
+					Interface, and hence through any device that has an up-to-date browser.
+
 				\paragraph{Android Application}
-				
-					An Android application will allow the users of Android smartphones and tablets to interact with the system with a native application on their device.
-				
+
+					An Android application will allow the users of Android smartphones
+					and tablets to interact with the system with a native application on
+					their device.
+
 				\paragraph{iOS Application}
-		
-					An iOS application, similarly to the Android app, will enable mobile Apple devices, such as iPhones or iPads, to connect to the software service.
-		
+
+					An iOS application, similarly to the Android app, will enable mobile
+					Apple devices, such as iPhones or iPads, to connect to the software
+					service.
+
 			\subsubsection{Hardware Interfaces}
-			
+
+				As described above, we intend to publish to three platforms.
+
 			\subsubsection{Software Interfaces}
-			
+
+
+
 			\subsubsection{Communication Interfaces}
-			
+
 			\subsubsection{Memory}
-			
+
+				Most information regarding the system will reside in a central
+				database. This database will contain, amongst other things:
+
+				\begin{itemize}
+					\item User information
+					\item Location
+				\end{itemize}
+
+				For network efficiency, . Similarly the browser may store a
+				small fraction of this data (most likely user data) to reduce data usage.
+
 			\subsubsection{Operations}
-			
+
+
+
 			\subsubsection{Site Adaptation Requirements}
-		
+
 		\subsection{Product Functions}
-		
+
 			\begin{itemize}
-				\item Successfully identify a user's current location, and plan an accurate route to another location on campus.
+				\item Successfully identify a user's current location, and plan an
+							accurate route to another location on campus.
 			\end{itemize}
-		
+
 		\subsection{User Characteristics}
-		
+
+			For the average user of the system we should not assume any more technical
+			skills than that required to operate simple smartphone apps. The propsed
+			software should immitate, as far as possible, the paradigms and idealogies
+			that previous mobile and browser applications have established. We can
+			expect that students will have encountered navigational systems such as
+			Google Maps, and should thus try to meet the expectations that users have
+			developed in using these application.
+
 		\subsection{Constraints}
-		
+
+			\begin{itemize}
+				\item We do not need to account for navigation off-campus
+				\item We can only accurately navigate within sufficient WiFi coverage.
+
+			\end{itemize}
+
 		\subsection{Assumptions and Dependencies}
-	
-	
+
+
+
 	\section{Specific Requirements}
-	
+
 		\subsection{External Interface Requirements}
-		
+
 		\subsection{Functional Requirements}
-		
+
 		\subsection{Performance Requirements}
-		
-			
-		
+
+			The system .
+
 		\subsection{Software System Attributes}
-		
+
 		\subsection{Other Requirements}
 
 \end{document}
