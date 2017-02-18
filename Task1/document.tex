@@ -86,7 +86,9 @@
 
 				\begin{itemize}
 					\item User information
-					\item Location
+					\item Locations
+					\item Events
+					\item Route caching
 				\end{itemize}
 
 				For network efficiency, it will make sense to keep a portion of this
@@ -134,12 +136,12 @@
 
 		\subsection{External Interface Requirements}
 
-			The system will need to effectively interface with a device's WiFi
+			The system will need to effectively interface with a device's WiFi and GPS
 			hardware.
 
 		\subsection{Functional Requirements}
 
-
+			The system will
 
 		\subsection{Performance Requirements}
 
@@ -180,6 +182,36 @@
 			meter error is essential for insuring that lecture-hall resolution can
 			still work reliably.
 
+		\subsection{Design Constraints}
+
+			The success and performance of the proposed system is contingent on the
+			following citeria which cannot be altered:
+
+			\paragraph{Accuracy Is Limited By Device}
+
+				Due to the fact that navigation is dependednt entirely on WiFi signal
+				strength, the accuracy of the navigation can only ever be as proficient
+				as the sensitivity of the WiFi hardware. This is a fundamental constaint,
+				and cannot be worked around in the current vision of the proposed
+				software.
+
+			\paragraph{Processing Capability}
+
+				Mobile devices vary significantly in terms of processing capability,
+				particularly so in Android devices. In order to make the system
+				available to the largest possible audience, we must build to the lowest
+				common denominator. With this in mind, we must be confident that the
+				application will run smoothly on a device that may only have a single
+				500 Mhz processor. The only way to achieve this is to make the client
+				application as light as possible, and only do essential processing on
+				device itself.
+
+				\paragraph{Navigation is Limited By Source Maps}
+
+				The system's ability to navigate is directly proportional to the accuracy
+				of the maps which we use. If the university has been poorly mapped in
+				certain areas, navigation may be inaccurate or impossible altogether.
+
 		\subsection{Software System Attributes}
 
 			Another concern is the security of users' data. To prevent a compromise of
@@ -193,10 +225,10 @@
 				\item Maintaining anonymity as far as possible
 			\end{itemize}
 
-			This system will be available at all times, and a
-			maintainer or administrator will only have to interact with the system
-			when \textsl{CRUD}-ing locations and events, or to observe usage
-			statistics through the analytics dashboard.
+			This system will be available at all times, and a maintainer or
+			administrator will only have to interact wFith the system when
+			\textsl{CRUD}-ing locations and events, or to observe usage statistics
+			through the analytics dashboard.
 
 			\medskip
 
