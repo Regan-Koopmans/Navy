@@ -134,8 +134,8 @@
 
 		\subsection{External Interface Requirements}
 
-			The system will need to effectively interface with a device's WiFi, and
-			networking
+			The system will need to effectively interface with a device's WiFi
+			hardware.
 
 		\subsection{Functional Requirements}
 
@@ -143,13 +143,69 @@
 
 		\subsection{Performance Requirements}
 
-			The system will need to operate with a reasonable level of speed and
-			responsiveness. For this reason we will need to consider a path finding
-			algorithm that is suited to both the need for accuracy and the time needed
+			The system will need to operate within reasonable levels of speed and
+			responsiveness to be useful to the end-user. For this reason we will need
+			to consider a path finding algorithm that is suited to both the need for
+			accuracy and the time needed to calculate such a path.
+
+			\medskip
+
+			One strategy that we might use is to \textsl{precompute portions of the
+			path-finding}. We may already know the best route between two shorter
+			paths, and hence the search space of the path finding algorithm can be
+			greatly reduced when composed of only two or three path ``legs'' to choose
+			from.
+
+			\medskip
+
+			Further, since the largest number of users is expected to be mobile users,
+			criteria such as battery usage and processing power will be of
+			great concern. To this end, we can think about caching the data that is
+			most important and most frequently used for the user on their devices.
+			This will make the system feel more responsive, and will reduce overall
+			strain on the system.
+
+			\medskip
+
+			We can also think about caching on the system itself. If two students
+			request a path to the same location, and are within 20 meters of one
+			another, we can consider that as two equal requests and compute this once.
+			The system can keep a log of requests within storage, for a limited period
+			of time. This will save massive amounts of recomputation.
+
+			\medskip
+
+			In terms of accuracy, the software will need provide navigation between
+			individual lecture halls. This means that an accuracy with less than a 5
+			meter error is essential for insuring that lecture-hall resolution can
+			still work reliably.
 
 		\subsection{Software System Attributes}
 
+			Another concern is the security of users' data. To prevent a compromise of
+			private data we must follow the best practises as established by industry
+			leaders, such as:
 
+			\begin{itemize}
+				\item Not storing plaintext passwords
+				\item Not storing identifying datapoints
+				\item Encrypting critical data communication
+				\item Maintaining anonymity as far as possible
+			\end{itemize}
+
+			This system will be available at all times, and a
+			maintainer or administrator will only have to interact with the system
+			when \textsl{CRUD}-ing locations and events, or to observe usage
+			statistics through the analytics dashboard.
+
+			\medskip
+
+			Value may also be extended by integrating third-party services. One such
+			addition would be integration with \textsl{Google Calendar}. From Google
+			Calendar we would be able to get timed appointments at specific locations,
+			and would therefore be able to find paths. Interoperability with the UP
+			network services would equally be automatically load lecture times for
+			both lecturers and students.
 
 		\subsection{Other Requirements}
 
