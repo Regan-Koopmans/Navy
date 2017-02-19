@@ -19,3 +19,6 @@ Once you have installed the LaTeX compiler you can run
 `miktex-pdflatex document.tex` inside the terminal or command prompt to create
 a pdf document in the current directory. However if you are uncomfortable
 working in the command line you can use a [LaTeX IDE](http://www.texstudio.org/).
+
+Bear in mind that it will require two consecutive compiles for the table of
+contents to show. 
