@@ -51,7 +51,7 @@
 			the university. This software will create value for the end user, in that
 			it solves the problem of finding specific locations on campus better than
 			the current solution of static maps and written descriptions. This
-			necessity is particularly accute in first-year students and guests to the
+			necessity is particularly acute in first-year students and guests to the
 			university, where the lack of such knowledge creates anxiety, stress and
 			occupies time and mental energy that might be better spent otherwise.
 
@@ -133,7 +133,7 @@
 				users.
 
 
-				The product should idealy be as decoupled from UP as possible. In doing
+				The product should ideally be as decoupled from UP as possible. In doing
 				this, the product might be deployed elsewhere with minimal modification,
 				and therefore make the system more beneficial than simply it usage in
 				the university.
@@ -161,7 +161,7 @@
 			\begin{itemize}
 
 				\item We do not need to account for navigation off-campus
-				\item We can only accurately navigate within sufficient WiFi coverage.
+				\item We can only accurately navigate within sufficient Wi-Fi coverage.
 
 			\end{itemize}
 
@@ -173,7 +173,7 @@
 
 		\subsection{External Interface Requirements}
 
-			\paragraph{The system will interface with WiFi Hardware}
+			\paragraph{The system will interface with Wi-Fi Hardware}
 
 				The system will poll a request to the hardware by giving a access point
 				address, and will hopefully return a floating point number between 0 and
@@ -182,7 +182,7 @@
 				 that we do not actually need to concern ourselves with hardware
 				 details, but purely network primitives. This will have to be a fast
 				operation, as we anticipate this will occur for every access point in
-				the vacinity at least once a second, preferably more.
+				the vicinity at least once a second, preferably more.
 
 
 		\subsection{Functional Requirements}
@@ -452,7 +452,7 @@
 			request a path to the same location, and are within 20 meters of one
 			another, we can consider that as two equal requests and compute this once.
 			The system can keep a log of requests within storage, for a limited period
-			of time. This will save massive amounts of recomputation.
+			of time. This will save massive amounts of re-computation.
 
 			\medskip
 
@@ -464,13 +464,13 @@
 		\subsection{Design Constraints}
 
 			The success and performance of the proposed system is contingent on the
-			following citeria which cannot be altered:
+			following criteria which cannot be altered:
 
 			\paragraph{Accuracy Is Limited By Device}
 
-				Due to the fact that navigation is dependent entirely on WiFi signal
+				Due to the fact that navigation is dependent entirely on Wi-Fi signal
 				strength, the accuracy of the navigation can only ever be as proficient
-				as the sensitivity of the WiFi hardware. This is a fundamental constraint,
+				as the sensitivity of the Wi-Fi hardware. This is a fundamental constraint,
 				and cannot be worked around in the current vision of the proposed
 				software.
 
