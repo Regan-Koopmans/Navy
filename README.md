@@ -2,6 +2,14 @@
 
 Repository for the Navy COS 301/730 group.
 
+Team members:
+* Claudio Da Silva 14205892
+* Ruan Klinkert
+* Regan Koopmans 15043143
+* Tlou Lebelo 15209190
+* Lindelo Mapumulo 12002862
+* Nkosinathi Mothoa 12077420
+
 ## How To Compile the SRS Document
 
 The document is written in LaTeX. If you do not have a LaTeX compiler, you can
