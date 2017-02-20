@@ -4,7 +4,7 @@ Repository for the Navy COS 301/730 group.
 
 Team members:
 * Claudio Da Silva 14205892
-* Ruan Klinkert
+* Ruan Klinkert 14022282
 * Regan Koopmans 15043143
 * Tlou Lebelo 15209190
 * Lindelo Mapumulo 12002862
