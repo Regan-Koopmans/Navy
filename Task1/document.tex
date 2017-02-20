@@ -15,7 +15,7 @@
 	\begin{flushright}
 	 \textbf{Team Members: }\newline
 	 Claudio Da Silva 14205892\newline
-	 Ruan Klinkert \newline
+	 Ruan Klinkert 14022282\newline
 	 Regan Koopmans 15043143\newline
 	 Tlou Lebelo 15209190\newline
 	 Lindelo Mapumulo 12002862\newline
@@ -37,7 +37,7 @@
 		this reason we believe the two main interest groups are:
 
 		\begin{itemize}
-			\item Students who are search for a particular building on campus, or are
+			\item Students who are searching for a particular building on campus, or are
 						investigating the many historically relevant buildings on campus.
 
 			\item Guests to the university that require assistance finding locations.
@@ -47,7 +47,7 @@
 		\subsection{Scope}
 
 			The system proposed will be called NavUP. Put briefly, the product will
-			on-campus navigation support to students, lecturers, and visitors to
+			provide on-campus navigation support to students, lecturers, and visitors to
 			the university. This software will create value for the end user, in that
 			it solves the problem of finding specific locations on campus better than
 			the current solution of static maps and written descriptions. This
@@ -68,8 +68,35 @@
 		The NavUP Navigation system
 
 		\subsection{Product Perspective}
+		
+			The system will implement a client-server model, wherein the server will maintain map 
+			data of the campus. It will receive the latitude and longitude of both the source and 
+			destination, then with the addition of some internal crowd sourced data and additional 
+			constraints, determine the best path to the destination. 
 
 			\subsubsection{System Interfaces}
+			
+				A system interface defines the interface between a sub-system and the system as a whole. 
+			
+				\paragraph{Client}
+				
+					The client will therefore utilize an interface with the mobile device's GPS system, 
+					Wi-Fi connectivity and varies standard device systems, such as the graphics system, 
+					device storage and touch recognition. The Wi-Fi system will be used to establish a 
+					connection to the world wide web, while the GPS system will be responsible for 
+					acquiring the necessary data and determining the devices' current location.\\
+					The OS will however be responsible for providing a standard interface to all of these 
+					sub-systems, as well as handling standard processes.
+			
+				\paragraph{Server}
+				
+					The server will have to interface with the database server and the webserver, WAMP or 
+					similar systems could be used to handle all required functionality. MongoDB will however 
+					be used as the database management system, since relational databases does not work very 
+					well for schemaless data. \\
+					Furthermore, the server will require an interface with the hosts 
+					internet connection, however the OS will handle all standard interactions, and thus it will 
+					not be necessary to explicitly communicate with the hosts' Ethernet connection.
 
 			\subsubsection{User Interfaces}
 
@@ -95,13 +122,34 @@
 
 			\subsubsection{Hardware Interfaces}
 
-				As described above, we intend to publish to three platforms.
+				As described above, we intend to publish to three platforms.\\\\
+				It will be assumed that the client will run on modern smartphone devices, 
+				that provides at least a Wi-Fi connector and a GPS system. The Wi-Fi 
+				connector will be used to establish a connection to the world wide web, 
+				while the GPS system will be responsible for acquiring the necessary data 
+				and determining the devices' current location.\\\\
+				The server will require an Ethernet connection and standard hardware, such 
+				as a primary storage device, processing etc.
+
 
 			\subsubsection{Software Interfaces}
 
-
+				The client will require an interface with the host devices' OS. Namely Android OS or iOS, 
+				or for the web-browser interface, any supportive OS.\\\\
+				The server would firstly require an interface with the host OS, either Linux or Windows. 
+				The server would then make use of Apache as a web server, which will provide an entry point 
+				for the requests from the clients as well as managing and maintaining incoming and outgoing 
+				messages. Finally, the server would make use of mongoDB as the database and database 
+				management system. 
 
 			\subsubsection{Communication Interfaces}
+			
+				The client will connect to the world wide web using its Wi-Fi connector. \\\\
+				The server will be connected to the world wide web using an Ethernet connection. \\
+				A webserver will run on the server as to provide an entry point for client requests.\\\\
+				The front end(clients), and back end(server) systems will communicate through the use of 
+				REST calls utilizing a JSON payload.  
+
 
 			\subsubsection{Memory}
 
@@ -122,9 +170,48 @@
 
 			\subsubsection{Operations}
 
+				Operations simply refers to a description of the operations of the system. 
+				
+				\paragraph{Client}
+				
+					The client will detect its current latitude and longitude. It will allow 
+					the user to pick a destination and specify some additional criteria. \\
+					The system will check its cache, ideally organised in accordance to latitude 
+					and longitude locations. \\
+					If the client has sufficient data of the area it will attempt to construct 
+					multiple viable paths using the locally stored data, if more than one path 
+					had been constructed, the client will request traffic data along those paths, 
+					after which it will find a compromise between distance and traffic.\\
+					If not, all of the user entered data as well as the current position will 
+					be submitted to the server, and the client will wait for the server to return 
+					a path.\\
+					Once the path data had been received from the server, the least frequently 
+					accessed cached data will be discarded, and the newly retrieved data will be stored.\\
+					When a path had been constructed the client will, be redirected to a new screen 
+					displaying the current path and map of the surrounding area.\\
+					At frequent intervals the client will check its current position and update it in the 
+					current path, it will also submit its location to the server.\\
+					Once the destination had been reached or the user cancelled the path, the navigation 
+					screen will be killed.
+					
+				\paragraph{Server}
+				
+					The server will maintain a database of all buildings and inaccessible areas on 
+					campus, along with latitude and longitude point outlines. \\
+					When the server receives a request to generate a path, it will attempt to calculate 
+					a variety of paths between the two locations without intersecting inaccessible areas, 
+					while also taking additional criteria and restrictions into account.\\
+					If more than one path was found, it will calculate the density of users along each 
+					of those paths by using user's current locations.\\
+					The server will also maintain a database of all active users along with their current 
+					positions. At regular intervals the client will update its own position.
 
 
 			\subsubsection{Site Adaptation Requirements}
+			
+				Site Adaptation Requirements refers to specific requirements based on the particular 
+				device it is hosted on.\\\\
+				The system will provide support for multiple languages.\\
 
 				The system will need to be able to adapt to the changing environment of
 				the university. The system should be able to acknowledge a change in the
@@ -162,11 +249,30 @@
 
 				\item We do not need to account for navigation off-campus
 				\item We can only accurately navigate within sufficient Wi-Fi coverage.
+				\item Both the android and iOS applications will be constrained by the system 
+				interface to the GPS within the mobile device, since different GPS manufacturers 
+				use different interfaces and may provide different navigational features.
+				\item Internet connectivity and/or Wi-Fi coverage are crucial constrain.
+				\item Server processing power, database capacity and bandwidth are constraints 
+				due to the large number of students attending the University of Pretoria, large 
+				volumes of data can be expected, which might force the server to queue incoming 
+				requests, and in turn lead to a decrease in response time.
 
 			\end{itemize}
 
 		\subsection{Assumptions and Dependencies}
+		
+			\begin{itemize}
 
+				\item It will be assumed that the mobile applications will run on mobile devices that 
+				meet the minimum performance requirements to effectively run the application.
+				\item It will be assumed that the GPS systems on the devices will make use of a common 
+				interface provided by the OS.
+				\item The University of Pretoria claims to provide full Wi-Fi coverage, which means we can 
+				make the assumption that the mobile devices will always have internet connectivity, in the 
+				event that connectivity is momentarily lost, current path information may not be discarded.
+
+			\end{itemize}
 
 
 	\section{Specific Requirements}
