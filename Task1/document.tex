@@ -11,7 +11,7 @@
 \begin{document}
 
 	\maketitle
-
+	\bigskip
 	\begin{flushright}
 	 \textbf{Team Members: }\newline
 	 Claudio Da Silva 14205892\newline
@@ -526,18 +526,10 @@
 	The table below uses requirements (R) and uses cases (UC) as enumerated in
 	\textit{5 Appendix}.
 
-	\begin{table}[!h]
-		\centering
-		\caption{Tracibility Matrix for Proposed Software}
-		\label{my-label}
-		\begin{tabular}{|ll|l|l|l|}
-			\hline
-			\multicolumn{1}{|l|}{Requirement} & Priority & UC1 & UC2 & UC3 \\ \hline
-			\multicolumn{1}{|l|}{R01}            &          &     &     &     \\ \hline
-			\multicolumn{1}{|l|}{R02}            &          &     &     &     \\ \hline
-														&    UCPriority   &     &     &     \\ \hline
-		\end{tabular}
-	\end{table}
+	\begin{figure}[ht!]
+		\centering{\includegraphics[width=\linewidth]{images/traceMatrix.png}}
+		\caption \newline Traceability Matrix
+	\end{figure}
 
 	\pagebreak
 
@@ -570,22 +562,26 @@
 					\item [\textbf{UC15}] Upload lecturer timetable.
 					\item [\textbf{UC16}] View lecturer timetable.
 					\item [\textbf{UC17}] Get next lecturer timetable event.
+					\item [\textbf{UC18}] CRUD custom event.
 				\end{itemize}
 
 			\subsubsection{Administration Module}
 
 				\begin{itemize}
-					\item [\textbf{UC18}] Get help.
-					\item [\textbf{UC19}] Register new user.
-					\item [\textbf{UC20}] Login user.
-					\item [\textbf{UC21}] Select mode.
+					\item [\textbf{UC19}] Get help.
+					\item [\textbf{UC20}] Register new user.
+					\item [\textbf{UC21}] Login user.
+					\item [\textbf{UC22}] Select mode.
 
 				\end{itemize}
 
 		\subsection{Abbreviated list of Requirements}
 
 			\begin{itemize}
-				\item [\textbf{R01}] Requirement
+				\item [\textbf{R01}] The system should provide basic navigation on campus.
+				\item [\textbf{R02}] The system should allow integration with timetables and user-set events.
+				\item [\textbf{R03}] The system should maintain a profile for the user.
+				\item [\textbf{R04}] The system should be intuitive and easy to use
 			\end{itemize}
 
 \end{document}
